@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="id1"></div>
+    <script>
+        function barista(coffees){
+  //TODO: Maths are cool!
+  
+  // 0 + 2 + 4 + 6 + 8
+  // 0 + 2(1) + 2(2) + 2(3) + 2(4)
+  
+  var sum = 0;
+  var coffees = coffees.sort(function(a, b) {return a - b;});
+  console.log(coffees);
+  coffees.reduce(
+    (pValue, cValue, Index) => {
+      var waitTime = Index < 1 ? cValue : pValue + cValue + 2;
+      console.log(waitTime);
+      sum += waitTime;
+      return waitTime;
+    }, 0);
+  return sum;
+}
+id1.innerHTML = barista([3,2,5,10,9]);
+
+    </script>
+</body>
+</html>
